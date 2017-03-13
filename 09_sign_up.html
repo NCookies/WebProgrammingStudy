@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="index.html" method="post">
+        <fieldset>
+          <legend>
+            <h1>관심사</h1>
+          </legend>
+          <input type="checkbox" name="interest-soccer">
+          <label for="">축구</label>
+          <input type="range" min="0" max="100" value="50" class="ranger" id="fader1" step="1">
+          <output for="fader" id="volume">50</output>
+          <br>
+
+          <input type="checkbox" name="">
+          <label for="">농구</label>
+          <input type="range" min="0" max="100" value="50" class="ranger" id="fader2" step="1">
+          <output for="fader2" id="volume">50</output>
+          <br>
+
+          <input type="checkbox" name="">
+          <label for="">야구</label>
+          <input type="range" min="0" max="100" value="50" class="ranger" id="fader3" step="1">
+          <output for="fader3" id="volume">50</output>
+          <br>
+
+          <input type="checkbox" name="">
+          <label for="">족구</label>
+          <input type="range" min="0" max="100" value="50" class="ranger" id="fader4" step="1">
+          <output for="fader4" id="volume">50</output>
+          <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <h1>기본 정보</h1>
+          </legend>
+          <label for="">이름</label>
+          <input type="text" name="id">
+          <br>
+
+          <label for="">주소</label>
+          <input type="text" name="id">
+          <br>
+
+          <label for="">집전화</label>
+          <label for="">휴대전화</label>
+          <select class="" name="">
+            <option value="">02</option>
+            <option value="">031</option>
+            <option value="">032</option>
+            <option value="">033</option>
+            <option value="">041</option>
+            <option value="">042</option>
+          </select>
+          <label for="">-</label>
+          <input type="text" name="id">
+          <label for="">-</label>
+          <input type="text" name="">
+          <br>
+
+          <label for="">휴대전화</label>
+          <select class="" name="">
+            <option value="">010</option>
+            <option value="">011</option>
+            <option value="">012</option>
+          </select>
+          <label for="">-</label>
+          <input type="text" name="id">
+          <label for="">-</label>
+          <input type="text" name="">
+          <br>
+
+          <label for="">이메일</label>
+          <input type="text" name="" placeholder="example@gmail.com" pattern="^\D{0,15}\@gmail\.com$">
+          <br>
+
+          <label for="">학력</label>
+          <select class="" name="">
+            <optgroup label="일반">
+              <option value="">초졸</option>
+              <option value="">중졸</option>
+              <option value="">고졸</option>
+            </optgroup>
+            <optgroup label="우대">
+              <option value="">학사</option>
+              <option value="">석사</option>
+              <option value="">박사</option>
+            </optgroup>
+          </select>
+          <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <h1>로그인 정보</h1>
+          </legend>
+
+          <label for="">아이디</label>
+          <input type="text" name="id" placeholder="ID" required="required">*
+          <br>
+
+          <label for="">비밀번호</label>
+          <input type="password" name="passwd" placeholder="PASSWORD" required="required">*
+          <br>
+
+          <label for="">비밀번호 확인</label>
+          <input type="password" name="check_passwd" placeholder="PASSWORD" required="required">*
+          <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            <h1>추가 사항</h1>
+          </legend>
+        </fieldset>
+
+        <input type="submit" name="" value="확인">
+        <input type="reset" name="" value="초기화">
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".ranger").on('change mousemove', function() {
+          $(this).next("#volume").html($(this).val())
+        })
+      })
+    </script>
+  </body>
+</html>
