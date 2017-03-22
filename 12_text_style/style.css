@@ -1,0 +1,26 @@
+div {
+    text-align: justify;
+    padding: 10px;
+    border: 1px solid #cc0000;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+h1 {
+    color: green;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+h2 {
+  text-shadow: 1px 1px;
+}
+
+p {
+  text-indent: 20px;
+  letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
+}

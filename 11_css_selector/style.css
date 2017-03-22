@@ -1,0 +1,34 @@
+* {
+  font-style: italic;
+}
+
+#id-selector {
+  color: skyblue;
+}
+
+.class-selector {
+  color: red;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+img[alt="error"] {
+  float: right;
+}
+
+h6:hover {
+  color: pink;
+}
+
+li[title] {
+  content: ">";
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 5px 6px 0px;
+}
+
+legend {
+  text-shadow: 1px, 1px, 1px;
+}
