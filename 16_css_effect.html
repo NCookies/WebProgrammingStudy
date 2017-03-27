@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>css로 효과 주기</title>
+    </head>
+    <style>
+        #container {
+            display: inline;
+        }
+
+        /* 투명도 설정 */
+        #opacity_img {
+            opacity: 0.4;
+            height: 200px;
+            width: auto;
+        }
+
+        #opacity_img:hover {
+            opacity: 1.0;
+        }
+
+        /* 전환 효과 */
+        #change img {
+            height: auto;
+            width: 200px;
+            transition: width 1s;
+        }
+
+        #change img:hover {
+            width: 300px;
+        }
+
+        /* 변환 효과 */
+        #transform {
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+        }
+
+        #transform #box1 {
+            transform: rotate(30deg);
+            background-color: lightgreen;
+        }
+
+        #transform #box2 {
+            transform: skew(30deg, 20deg);
+            background-color: lightblue;
+        }
+
+        /* 애니메이션 효과 */
+        #animation img {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            animation: 2s movebox;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes movebox {
+            0% { left: 0px; top: 0px;}
+            50% { left: 200px; top: 0px;}
+            100% { left: 0px; top:0px;}
+        }
+
+        #custom img {
+            height: 400px;
+            width: auto;
+            transition: transfrom 1s;
+        }
+
+        #custom img:hover {
+            transform: rotate(30deg);
+        }
+    </style>
+    <body>
+        <div id="container">
+            <div id="show_image">
+                <h1>이미지 투명도</h1>
+                <img src="https://pbs.twimg.com/media/CeY_AuiUEAAOZvS.jpg" alt="error" id="opacity_img">
+            </div>
+
+            <div id="change">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSZQbzbjMt6ghv7bYf9oRnBvlwggSU6oRc2p240F_Nj5Wex2NURrQ" alt="error">
+            </div>
+        </div>
+
+        <div id="transform">
+            <div id="box1">
+                <h3>box1</h3>
+            </div>
+            <div id="box2">
+                <h3>box2</h3>
+            </div>
+        </div>
+
+        <div id="animation">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSU92xbO9puFV3FyrCAuIWSvfvKb4whBFcA5w9f-93exFL2cw559g" alt="error">
+        </div>
+
+        <div id="custom">
+            <img src="http://mblogthumb2.phinf.naver.net/20160312_217/sagiri_izumi_1457782680053IjGf8_JPEG/pixiv54903713_1.jpg?type=w2" alt="error">            
+        </div>
+    </body>
+</html>
