@@ -1,0 +1,12 @@
+#portfolio-section {
+    background-color: lightyellow;
+}
+
+#portfolio-full-screen-image {
+    background-image: url(../img/portfolio_backgroud.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    height: 990px;
+    width: 100%;
+}

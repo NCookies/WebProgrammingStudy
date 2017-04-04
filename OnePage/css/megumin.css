@@ -1,0 +1,65 @@
+/* import fonts */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
+#megumin-section {
+    background-color: lightgreen;
+}
+
+.article{
+	background-color:#213E4A;
+	padding:20px;
+    height: 20%;
+}
+
+.article .line{
+	/* The dividing line inside of the article is darker: */
+	background-color: #15242a;
+	border-bottom-color: #204656;
+	/*margin:1.3em 0;*/
+
+}
+.article h2 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
+.article p {
+    font-family: 'Nanum Pen Script', serif;
+    font-size: 30px;
+
+    text-indent: 1em;
+    word-spacing: 3px;
+    line-height: 1.5em;
+
+    color: white;
+}
+
+img {
+	border: 3px solid #142830;
+	float:right;
+
+	width: 30%;
+    height: auto;
+
+    margin: 0px 0px 10px 30px;
+}
+
+blockquote {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 3em;
+  font-family: Georgia;
+  color: #bcbcbc;
+  float: left;
+  margin: -5px 10px 0px -10px;
+}
