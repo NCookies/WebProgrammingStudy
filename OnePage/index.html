@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My One Page</title>
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="header" id="main_menu">
+            <div class="container">
+                <div class="logo"></div>
+                <nav class="right">
+                    <ul>
+                        <li class="scroll"><a href="#home-section">HOME</a></li>
+                        <li class="scroll"><a href="#main-section">메인</a></li>
+                        <li class="scroll"><a href="#portfolio-section">포트폴리오</a></li>
+                        <li class="scroll"><a href="#megumin-section">메구밍</a></li>
+                        <li class="scroll"><a href="#ask-section">문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- <div id="block-header"></div> -->
+
+        <div class="section home" id="home-section">
+            <div class="wrapper home-wrapper">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="section" id="main-section">
+            <div class="">
+            </div>
+        </div>
+
+        <div class="section has-background-image" id="portfolio-section">
+            <div class="">
+
+            </div>
+            <div class="background-fixed" id="portfolio-full-screen-image">
+
+            </div>
+        </div>
+
+        <div class="section" id="megumin-section">
+
+        </div>
+
+        <div class="section has-background-image" id="ask-section">
+
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>
+        $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+        </script>
+    </body>
+</html>
