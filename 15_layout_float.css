@@ -1,0 +1,78 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    height: 10%;
+    width: 100%;
+    background-color: lightgreen;
+    position: fixed;
+}
+
+#menu ul {
+    list-style-type: none;
+    float: right;
+    padding-left: 0px;    
+}
+
+#menu ul li {
+    display: inline;
+    border-left: 1px solid black;
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 0px;
+}
+
+#menu li:first-child {
+    border-left: none;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+}
+
+#menu a:hover {
+    border-bottom: 1px solid black;
+    color: blue;
+}
+
+nav {
+    float: left;
+    background-color: lightblue;
+    height: 800px;
+    width: 20%;
+}
+
+section {
+    float: left;
+    background-color: orangered;
+    height: 800px;
+    width: 60%;
+}
+
+aside {
+    float: right;
+    background-color: greenyellow;
+    width: 20%;
+    height: 800px;
+}
+
+footer {
+    clear: both;
+    background-color: lightcoral;
+    height: 10%;
+    width: 100%;
+}
+
+/*#content {
+    background-color: yellow;
+    display: table-cell;
+    text-align:center;
+}
+
+#content h1 {
+    margin:auto;
+    line-height:50px;
+    vertical-align:middle;
+}*/
