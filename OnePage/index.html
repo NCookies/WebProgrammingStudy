@@ -8,15 +8,20 @@
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
         <!-- custom css files -->
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/master.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/portfolio.css">
         <link rel="stylesheet" href="css/megumin.css">
         <link rel="stylesheet" href="css/ask.css">
+        <style>
+        body {
+            background-color: #213E4A;
+        }
+        </style>
     </head>
     <body>
-        <div class="header" id="main_menu">
+        <header id="main_menu">
             <div class="container">
                 <div class="logo"></div>
                 <nav class="right">
@@ -29,18 +34,19 @@
                     </ul>
                 </nav>
             </div>
+        </header>
+
+
+        <div class="section" id="home-section">
+
         </div>
 
-        <!-- <div id="block-header"></div> -->
-
-        <div class="section home" id="home-section">
-            <div class="wrapper home-wrapper">
-                <p></p>
+        <div class="section has-background-image" id="main-section">
+            <div class="background-fixed" id="main-full-screen-image">
+                <div class="wrapper main-wrapper">
+                    <p>Hello World</p>
+                </div>
             </div>
-        </div>
-
-        <div class="section" id="main-section">
-
         </div>
 
         <div class="section has-background-image" id="portfolio-section">
@@ -63,7 +69,7 @@
                     <figure> <!-- The figure tag marks data (usually an image) that is part of the article -->
 
                         <a href="#megumin-section">
-                            <img src="img/main_image.png" alt="">
+                            <img src="img/lying_megumin.png" alt="">
                         </a>
 
                     </figure>
@@ -84,9 +90,9 @@
 
         </div>
 
-        <div class="footer">
+        <footer>
 
-        </div>
+        </footer>
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script>

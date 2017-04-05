@@ -1,8 +1,39 @@
 
 #main-section {
-    background-color: #213E4A;
+    /*background-color: #FF9B02;*/
 }
 
-#main-section-figure {
-    background-image: url(../img/main_image.png);
+#main-full-screen-image {
+    /*background-image: url(../img/main_background.png);*/
+    background-image: url(../img/main_background.jpg);
+    background-position: center top;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    height: 990px;
+    width: 100%;
+}
+
+.main-wrapper {
+    position: absolute;
+    top: 200px;
+    bottom: 200px;
+    left: 20%;
+
+    height: 40%;
+    width: 50%;
+
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+
+    height: 60%;
+    width: 60%;
+}
+
+.main-wrapper p {
+    text-align: center;
 }
