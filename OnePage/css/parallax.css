@@ -1,80 +1,243 @@
-footer .main-gradient {
-  height: 70px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+
+/* CSS Document */
+
+/**
+{
+	padding: 0px;
+	margin: 0px;
 }
 
-.main-gradient {
-  background: -moz-linear-gradient(top, #00b4da 0%, #363636 100%); /* FF3.6+ */
-  background: linear-gradient(to bottom, #00b4da 0%,#363636 100%); /* W3C */
+html, body
+{
+	background: #000;
+	width: 100%;
+	height: 100%;
+}*/
+
+#wrap
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto 0 auto;
+	overflow: hidden;
 }
 
-/* sticky footer from css-tricks.com */
-* { margin:0; padding:0; }
-
-body > #wrap {height: auto; min-height: 100%;}
-
-#main { padding-bottom: 150px; }  /* must be same height as the footer */
-
-footer {
-    position: relative;
-	margin-top: -150px; /* negative value of footer height */
-	height: 150px;
-	clear:both;
-    background: #363636;
+#lightings
+{
+	bottom: -60px;
+	position: absolute;
+	width: 100%;
 }
 
-/* CLEAR FIX*/
-.clearfix:after {content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;}
-.clearfix {display: inline-block;}
-/* Hides from IE-mac \*/
-* html .clearfix { height: 1%;}
-.clearfix {display: block;}
-/* End hide from IE-mac */
+section
+{
+	/*border-radius*/
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	height: 20px;
+	width: 100%;
+	position: relative;
+	margin: auto;
 
-/* end sticky footer stuff from css-tricks.com */
-
-@-webkit-keyframes dot-move {
-	from {
-		background-position: 0 0
-	}
-	to {
-		background-position: 0 -100px
-	}
 }
 
-.fade-top {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-
-  background: -webkit-linear-gradient(bottom, rgba(0,180,212,0), #00b4d4);
+#one
+{
+	/*animation*/
+	-webkit-animation: one 5s ease-in-out infinite alternate;
+	-moz-animation: one 5s ease-in-out infinite alternate;
+	-ms-animation: one 5s ease-in-out infinite alternate;
+	-o-animation: one 5s ease-in-out infinite alternate;
+	animation: one 5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes
+one { from {
+-webkit-box-shadow: 0 0 250px 20px #473C78;
 }
 
-.dots {
-    height: 250px;
-    width: 100%;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background-repeat:repeat;
-    background-position: 0% 0%;
-
-    -webkit-animation-name: dot-move;
-	  -webkit-animation-duration: 3s;
-	  -webkit-animation-timing-function: linear;
-	  -webkit-animation-iteration-count: infinite;
+to { -webkit-box-shadow: 0 0 100px 15px #F72A3B; }
+}
+@-moz-keyframes
+one { from {
+-moz-box-shadow: 0 0 250px 20px #473C78;
 }
 
+to { -moz-box-shadow: 0 0 100px 15px #F72A3B; }
+}
+@-o-keyframes
+one { from {
+-o-box-shadow: 0 0 250px 20px #473C78;
+}
 
-.dots {
-   background: url(data:image/png;base64,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);
+to { -o-box-shadow: 0 0 100px 15px #F72A3B; }
+}
 
+@keyframes
+one { from {
+box-shadow: 0 0 250px 20px #473C78;
+}
+
+to {box-shadow: 0 0 100px 15px #F72A3B; }
+}
+
+#two
+{
+	width: 90%;
+	/*animation*/
+	-webkit-animation: two 4s ease-in-out infinite alternate;
+	-moz-animation: two 4s ease-in-out infinite alternate;
+	-ms-animation: two 4s ease-in-out infinite alternate;
+	-o-animation: two 4s ease-in-out infinite alternate;
+	animation: two 4s ease-in-out infinite alternate;
+}
+@-webkit-keyframes
+two { from {
+-webkit-box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #D8F05E; }
+}
+@-moz-keyframes
+two { from {
+-moz-box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #D8F05E; }
+}
+@-o-keyframes
+two { from {
+-o-box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #D8F05E; }
+}
+
+@keyframes
+two { from {
+box-shadow: 0 0 250px 20px #18C499;
+}
+
+to { box-shadow: 0 0 100px 15px #D8F05E; }
+}
+
+#three
+{
+	width: 80%;
+	/*animation*/
+	-webkit-animation: three 3s ease-in-out infinite alternate;
+	-moz-animation: three 3s ease-in-out infinite alternate;
+	-ms-animation: three 3s ease-in-out infinite alternate;
+	-o-animation: three 3s ease-in-out infinite alternate;
+	animation: three 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes
+three { from {
+-webkit-box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #3E33FF; }
+}
+@-moz-keyframes
+three { from {
+-moz-box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #3E33FF }
+}
+@-o-keyframes
+three { from {
+-o-box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #3E33FF }
+}
+
+@keyframes
+three { from {
+box-shadow: 0 0 250px 20px #FFDD00;
+}
+
+to { box-shadow: 0 0 100px 15px #3E33FF }
+}
+
+#four
+{
+	width: 70%;
+	/*animation*/
+	-webkit-animation: four 2s ease-in-out infinite alternate;
+	-moz-animation: four 2s ease-in-out infinite alternate;
+	-ms-animation: four 2s ease-in-out infinite alternate;
+	-o-animation: four 2s ease-in-out infinite alternate;
+	animation: four 2s ease-in-out infinite alternate;
+}
+@-webkit-keyframes
+four { from {
+-webkit-box-shadow: 0 0 250px 20px #781848;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #F2BBE9; }
+}
+@-moz-keyframes
+four { from {
+-moz-box-shadow: 0 0 250px 20px #781848;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #F2BBE9; }
+}
+@-o-keyframes
+four { from {
+-o-box-shadow: 0 0 250px 20px #781848;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #F2BBE9; }
+}
+
+@keyframes
+four { from {
+shadow: 0 0 250px 20px #781848;
+}
+
+to { shadow: 0 0 100px 15px #F2BBE9; }
+}
+
+#five
+{
+	width: 60%;
+	/*animation*/
+	-webkit-animation: five 1s ease-in-out infinite alternate;
+	-moz-animation: five 1s ease-in-out infinite alternate;
+	-ms-animation: five 1s ease-in-out infinite alternate;
+	-o-animation: five 1s ease-in-out infinite alternate;
+	animation: five 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes
+five { from {
+-webkit-box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { -webkit-box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+@-moz-keyframes
+five { from {
+-moz-box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { -moz-box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+@-o-keyframes
+five { from {
+-o-box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { -o-box-shadow: 0 0 100px 15px #F4F6AD; }
+}
+
+@keyframes
+five { from {
+box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { box-shadow: 0 0 100px 15px #F4F6AD; }
 }
