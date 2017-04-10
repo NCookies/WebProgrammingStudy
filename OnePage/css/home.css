@@ -1,3 +1,5 @@
 #home-section {
-    /*background-color: #EB593C;*/
+    position: relative;
+    line-height: 300px;
+    vertical-align: middle;
 }

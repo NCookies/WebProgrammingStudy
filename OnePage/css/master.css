@@ -66,3 +66,14 @@ footer {
 .background-fixed {
     background-attachment: fixed;
 }
+
+/* font */
+
+h1 {
+    text-align: center;
+    margin: 0px;
+    color: white;
+    font-size: 100px;
+    padding: 100px;
+    z-index: 1;
+}
