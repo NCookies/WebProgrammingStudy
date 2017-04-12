@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+            function calc(param) {
+                var operation = param.name;
+
+                var x = document.getElementById('x').value;
+                var y = document.getElementById('y').value;
+                var result = 0;
+
+                switch (operation) {
+                    case 'add':
+                        result = parseInt(x) + parseInt(y);
+                        document.getElementById('result').value = result;
+
+                        break;
+
+                    case 'sub':
+                        result = parseInt(x) - parseInt(y);
+                        document.getElementById('result').value = result;
+
+                        break;
+
+                    case 'mul':
+                        result = parseInt(x) * parseInt(y);
+                        document.getElementById('result').value = result;
+
+                        break;
+
+                    case 'div':
+                        result = parseInt(x) / parseInt(y);
+                        document.getElementById('result').value = parseInt(result);
+                        document.getElementById('remainder').value = result;
+
+                        break;
+                    default:
+                        alert("error");
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="" value="" id="x">
+        <input type="text" name="" value="" id="y">
+
+        <button type="button" name="add" onclick="calc(this)">+</button>
+        <button type="button" name="sub" onclick="calc(this)">-</button>
+        <button type="button" name="mul" onclick="calc(this)">*</button>
+        <button type="button" name="div" onclick="calc(this)">/</button>
+
+        <input id="result" type="text" placeholder="결과" readonly>
+        <input id="remainder" type="text" placeholder="나머지" readonly>
+    </body>
+</html>

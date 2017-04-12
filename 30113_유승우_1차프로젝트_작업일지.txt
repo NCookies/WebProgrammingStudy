@@ -1,0 +1,21 @@
+1일차
+- 프로젝트 시작
+- 화면에 꽉 채워져 보이도록 여러 개의 div 생성
+- 각 div 에 대한 이름 및 background color 지정
+- header(menu) 제작 및 고정(fixed)
+- background image가 스크롤의 위치에 상관없이 고정되도록 설정
+
+2일차
+- absolute, relative 등을 사용하며 반투명(main section) 상자 제작
+- 상단 메뉴를 클릭하면 해당 section 으로 이동하도록 js 작성
+- 섹션 이름 및 구성 변경
+- html 및 css 파일 정리
+
+3일차
+- footer 에 애니메이션을 추가하였지만 롤백. (잦은 오류가 많았음)
+- footer 에 애니메이션을 추가함(그라데이션)
+- 처음에 모양만 잡아놔던 상단 메뉴의 style 수정
+
+4일차
+- 각 섹션의 이름을 알 수 있도록 하는 h1 및 p 태그 추가
+- 그에 따른 css 적용
