@@ -2,7 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>javascript</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <input type="text" name="" value="" id="x">
+        <input type="text" name="" value="" id="y">
+
+        <button type="button" class="btn btn-primary" name="add" onclick="calc(this)">+</button>
+        <button type="button" class="btn btn-primary" name="sub" onclick="calc(this)">-</button>
+        <button type="button" class="btn btn-primary" name="mul" onclick="calc(this)">*</button>
+        <button type="button" class="btn btn-primary" name="div" onclick="calc(this)">/</button>
+
+        <input id="result" type="text" placeholder="결과" readonly>
+        <input id="remainder" type="text" placeholder="나머지" readonly>
+
         <script type="text/javascript">
             function calc(param) {
                 var operation = param.name;
@@ -42,17 +57,5 @@
                 }
             }
         </script>
-    </head>
-    <body>
-        <input type="text" name="" value="" id="x">
-        <input type="text" name="" value="" id="y">
-
-        <button type="button" name="add" onclick="calc(this)">+</button>
-        <button type="button" name="sub" onclick="calc(this)">-</button>
-        <button type="button" name="mul" onclick="calc(this)">*</button>
-        <button type="button" name="div" onclick="calc(this)">/</button>
-
-        <input id="result" type="text" placeholder="결과" readonly>
-        <input id="remainder" type="text" placeholder="나머지" readonly>
     </body>
 </html>
