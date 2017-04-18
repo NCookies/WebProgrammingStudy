@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {box-sizing:border-box;}
+            ul {list-style-type: none;}
+            body {font-family: Verdana,sans-serif;}
+
+            .month {
+                padding: 70px 25px;
+                width: 100%;
+                background: #1abc9c;
+            }
+
+            .month ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            .month ul li {
+                color: white;
+                font-size: 20px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+
+            .month .prev {
+                float: left;
+                padding-top: 10px;
+            }
+
+            .month .next {
+                float: right;
+                padding-top: 10px;
+            }
+
+            .weekdays {
+                margin: 0;
+                padding: 10px 0;
+                background-color: #ddd;
+            }
+
+            .weekdays li {
+                display: inline-block;
+                width: 13.6%;
+                color: #666;
+                text-align: center;
+            }
+
+            .days {
+                padding: 10px 0;
+                background: #eee;
+                margin: 0;
+            }
+
+            .days li {
+                list-style-type: none;
+                display: inline-block;
+                width: 13.6%;
+                text-align: center;
+                margin-bottom: 5px;
+                font-size:12px;
+                color: #777;
+            }
+
+            .days li .active {
+                padding: 5px;
+                background: #1abc9c;
+                color: white !important
+            }
+
+            /* Add media queries for smaller screens */
+            @media screen and (max-width:720px) {
+                .weekdays li, .days li {width: 13.1%;}
+            }
+
+            @media screen and (max-width: 420px) {
+                .weekdays li, .days li {width: 12.5%;}
+                .days li .active {padding: 2px;}
+            }
+
+            @media screen and (max-width: 290px) {
+                .weekdays li, .days li {width: 12.2%;}
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="month">
+        <ul>
+            <li class="prev" onClick="prevMonth()">&#10094;</li>
+            <li class="next" onclick="nextMonth()">&#10095;</li>
+            <li id="month-str" style="text-align:center">
+            August<br>
+            <span style="font-size:18px">2017</span>
+            </li>
+        </ul>
+        </div>
+
+        <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+        </ul>
+
+        <ul class="days">
+
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <!-- <span class="active">10</span> -->
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+            <li><span class="day"></span></li>
+        </ul>
+
+        <script type="text/javascript">
+            // INIT CALENDAR
+            {
+                var day_of_week = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+                var month_of_year = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+                //  DECLARE AND INITIALIZE VARIABLES
+                var Calendar = new Date();
+
+                var year = Calendar.getFullYear();     // Returns year
+                var month = parseInt(Calendar.getMonth()) + 1;    // Returns month (0-11)
+                var today = Calendar.getDate();    // Returns day (1-31)
+                var weekday = Calendar.getDay();    // Returns week day (1-7)
+
+                var DAYS_OF_WEEK = 7;    // "constant" for number of days in a week
+                var DAYS_OF_MONTH = 31;    // "constant" for number of days in a month
+                var MONTHS_OF_YEAR = 12;    // "constant" for number of months in a year
+
+                var firstDay = new Date(year, month - 1, 1);
+                var lastDay = new Date((new Date(2017, 4, 1)) - 1);
+
+                var tags = document.getElementsByClassName("day");
+                tags[firstDay.getDay() + today - 1].className += " active";
+
+                for (i = firstDay.getDay(), j = 1; i <= firstDay.getDay() + lastDay.getDate(), j <= lastDay.getDate(); i++, j++) {
+                    tags[i].innerHTML = j;
+                }
+            }
+
+            function prevMonth() {
+                for (day in tags) {
+                    tags[day].innerHTML = '';
+                }
+
+                var prevDay = new Date(year, firstDay.getMonth(), 1);
+                var lastDay = new Date((new Date(2017, 4, 1)) - 1);
+
+                console.log(firstDay,lastDay)
+
+                for (i = firstDay.getDay(), j = 1; i <= firstDay.getDay() + lastDay.getDate(), j <= lastDay.getDate(); i++, j++) {
+                    tags[i].innerHTML = j;
+                }
+            }
+
+        </script>
+    </body>
+</html>
