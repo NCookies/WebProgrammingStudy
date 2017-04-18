@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>D-day</title>
+    </head>
+    <body>
+        <div class="d-day">
+            <span>D-day 구하기</span>
+            <input type="date" onchange="getDday(this)">
+            <input type="text" id="d-day-result" readonly>
+        </div>
+
+        <div class="timer-area">
+            <h3 id="timer"></h3>
+        </div>
+
+        <script type="text/javascript">
+            const seconds = 1000;   // millisecond
+            const minutes = seconds * 60;
+            const hours = minutes * 60;
+            const days = hours * 24;
+            const years = days * 365;
+
+            function getDday(parm) {
+                var now = new Date();
+                var goal = new Date(parm.value);
+
+                var diff = goal.getTime() - now.getTime();
+
+                document.getElementById('d-day-result').value = 'D-' + Math.round(diff / days);
+
+                var timerHandler = setInterval(function() {
+                    var now = new Date();
+                    var diff = goal.getTime() - now.getTime();
+
+                    // 남은 날짜
+                    var diffDays = Math.floor(diff / days)
+
+                    // 남은 시간
+                    var diffHours = Math.floor((diff / hours) % 24);
+
+                    // 남은 분
+                    var diffMin = Math.floor((diff / minutes) % 60);
+
+                    // 남은 초
+                    var diffSec = Math.floor((diff / seconds) % 60);
+
+                    document.getElementById('timer').innerHTML = diffDays + " days "
+                                                                + diffHours + " : "
+                                                                + diffMin + " : "
+                                                                + diffSec;
+                }, 1000);
+            }
+        </script>
+    </body>
+</html>
