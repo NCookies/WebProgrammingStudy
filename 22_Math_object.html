@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Math 객체 함수 사용하기</title>
+
+        <style>
+            * {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .string-obj {
+                margin: auto;
+            }
+
+            .example {
+                margin-left: : auto;
+                margin-right: auto;
+
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                padding: 10px;
+                border: 3px solid green;
+
+                text-align: center;
+            }
+
+            button {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            span {
+                font-size: 15px;
+            }
+
+            input {
+                margin: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="example">
+            <input type="text" id="math">
+            <button type="button" onclick="calc()">Calculate</button>
+        </div>
+
+        <div class="answer">
+            <span>abs</span>
+            <input type="text" id="abs">
+
+            <span>acos</span>
+            <input type="text" id="acos">
+
+            <span>cos</span>
+            <input type="text" id="cos">
+
+            <span>ceil</span>
+            <input type="text" id="ceil">
+
+            <span>round</span>
+            <input type="text" id="round">
+
+            <span>sqrt</span>
+            <input type="text" id="sqrt">
+        </div>
+
+        <script type="text/javascript">
+            function calc() {
+                let input = document.getElementById('math').value;
+
+                document.getElementById('abs').value = Math.abs(input);
+                document.getElementById('acos').value = Math.acos(input);
+                document.getElementById('cos').value = Math.cos(input);
+                document.getElementById('ceil').value = Math.ceil(input);
+                document.getElementById('round').value = Math.round(input);
+                document.getElementById('sqrt').value = Math.sqrt(input);
+            }
+        </script>
+    </body>
+</html>
