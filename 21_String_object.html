@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>String 객체 함수</title>
+
+        <style>
+            * {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .string-obj {
+                margin: auto;
+            }
+
+            .example {
+                margin-left: : auto;
+                margin-right: auto;
+
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                padding: 10px;
+                border: 3px solid green;
+
+                text-align: center;
+            }
+
+            button {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="string-obj">
+            <div class="example" id="concat">
+                <h3>문자열 결합</h3>
+                <center>
+                    <button type="button" name="button" onclick="concatEx()">concat()</button>
+                </center>
+            </div>
+
+            <div class="example" id="index-of">
+                <h3>앞에서부터 값을 처음 발견한 index 반환</h3>
+                <center>
+                    <button type="button" name="button" onclick="indexOfEx()">indexOf()</button>
+                </center>
+            </div>
+
+            <div class="example" id="last-index-of">
+                <h3>뒤에서부터 값을 처음 발견한 index 반환</h3>
+                <center>
+                    <button type="button" name="button" onclick="lastIndexOfEx()">lastIndexOf()</button>
+                </center>
+            </div>
+
+            <div class="example" id="to-upper-case">
+                <h3>모든 소문자를 대문자로 변환</h3>
+                <center>
+                    <button type="button" name="button" onclick="toUpperCaseEx()">toUpperCase()</button>
+                </center>
+            </div>
+
+            <div class="example" id="to-lower-case">
+                <h3>모든 대문자를 소문자로 변환</h3>
+                <center>
+                    <button type="button" name="button" onclick="toLowerCaseEx()">toLowerCase()</button>
+                </center>
+            </div>
+
+            <div class="example" id="chat-at">
+                <h3>숫자 인덱스를 이용하여 해당 문자 반환</h3>
+                <center>
+                    <button type="button" name="button" onclick="chatAtEx()">chatAt()</button>
+                </center>
+            </div>
+
+            <div class="example" id="italics">
+                <h3>기울기</h3>
+                <center>
+                    <button type="button" name="button" onclick="italicsEx()">italics()</button>
+                </center>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function appendHelper(text, id) {
+                let textnode = document.createTextNode(text);
+                let concatElement = document.getElementById(id);
+
+                concatElement.appendChild(textnode);
+            }
+
+            function concatEx() {
+                let str1 = "Hello";
+                let str2 = "World";
+
+                appendHelper(str1.concat(' ', str2), 'concat')
+            }
+
+            function indexOfEx() {
+                let str = "Hello Wolrld. My name is Daniel";
+                let n = str.indexOf("My");
+
+                appendHelper('My of index of "' + str + '" is ' + n, 'index-of');
+            }
+
+            function lastIndexOfEx() {
+                let str = "Hello Wolrld. My name is Daniel";
+                let n = str.lastIndexOf("My");
+
+                appendHelper('My of index of "' + str + '" is ' + n, 'last-index-of');
+            }
+
+            function toUpperCaseEx() {
+                let str = "Hello Wolrld. My name is Daniel";
+                let upperStr = str.toUpperCase()
+
+                appendHelper('"' + str + '" => "' + upperStr + '"', 'to-upper-case');
+            }
+
+            function toLowerCaseEx() {
+                let str = "Hello Wolrld. My name is Daniel";
+                let lowerStr = str.toLowerCase()
+
+                appendHelper('"' + str + '" => "' + lowerStr + '"', 'to-lower-case');
+            }
+
+            function chatAtEx() {
+                let str = "Hello Wolrld. My name is Daniel";
+                let n = str.charAt(15);
+
+                appendHelper(n, 'chat-at');
+            }
+
+            function italicsEx() {
+                let str = "Hello Wolrld. My name is Daniel";
+
+                appendHelper(str.italics(), 'italics');
+            }
+        </script>
+    </body>
+</html>

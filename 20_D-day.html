@@ -46,7 +46,8 @@
                     // 남은 초
                     var diffSec = Math.floor((diff / seconds) % 60);
 
-                    document.getElementById('timer').innerHTML = diffDays + " days "
+                    var timer = document.getElementById('timer')
+                    timer.innerHTML = diffDays + " days "
                                                                 + diffHours + " : "
                                                                 + diffMin + " : "
                                                                 + diffSec;
