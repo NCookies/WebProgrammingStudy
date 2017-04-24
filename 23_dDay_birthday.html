@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>생일 D-day 구하기</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <style media="screen">
+            html, body {
+                margin: 0;
+                padding-top: 50px;
+
+                height: 100%;
+            }
+
+            .container {
+                width: 40%;
+                height: 70%;
+
+                /*margin-top: 100px;*/
+                margin-left: auto;
+                margin-right: auto;
+
+                padding: 40px;
+                padding-top: 100px;
+
+                text-align: center;
+                border: 1px solid black;
+            }
+
+            #d-day {
+                margin: 50px;
+                font-size: 20px;
+            }
+
+            h1 {
+                margin: 30px;
+            }
+
+            input {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container form-control">
+            <h1>생일 남은 시간</h1>
+
+            <div class="form-group">
+                <input type="date" id="birthday">
+                <button type="button" class="btn" onclick="getDday()">확인</button>
+            </div>
+
+            <div id="d-day">
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            const seconds = 1000;   // millisecond
+            const minutes = seconds * 60;
+            const hours = minutes * 60;
+            const days = hours * 24;
+
+            function getDday() {
+                let birthday = new Date(
+                                document.getElementById('birthday').value)
+                                .getTime();
+                let now = new Date().getTime();
+
+                if (isNaN(birthday) || birthday < now) {
+                    alert('제대로 된 시간을 입력해주세요');
+
+                    return;
+                }
+
+                let diff = birthday - now;
+
+                // 남은 날짜
+                let diffDays = Math.floor(diff / days)
+
+                // 남은 시간
+                let diffHours = Math.floor((diff / hours) % 24);
+
+                // 남은 분
+                let diffMin = Math.floor((diff / minutes) % 60);
+
+                // 남은 초
+                let diffSec = Math.floor((diff / seconds) % 60);
+
+                let s = document.getElementById('d-day');
+
+                s.innerHTML  = "앞으로 생일까지 " + diffDays + " 일 "
+                            + diffHours + " 시간 "
+                            + diffMin + " 분 "
+                            + diffSec + " 초 남았습니다";
+
+                setTimeout(getDday, 1000);
+            }
+        </script>
+    </body>
+</html>
