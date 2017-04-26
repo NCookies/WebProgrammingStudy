@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM 제어하기</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style media="screen">
+            html, body {
+                margin: 0;
+                padding: 0;
+
+                height: 100%;
+                padding-top: 30px;
+            }
+
+            .container {
+                width: 40%;
+                height: 90%;
+
+                margin-left: auto;
+                margin-right: auto;
+
+                padding-top: 100px;
+
+                text-align: center;
+                border: 1px solid black;
+            }
+
+            .menu-button {
+                text-align: center;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+
+            button {
+                /*margin: 50px;*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container well">
+            <div class="menu-button btn-group">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="addMenu()">메뉴 추가</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="removeMenu()">메뉴 삭제</button>
+            </div>
+
+            <div class="menu">
+                <h1>MENU</h1>
+                <ul id="my-list" class="list-group">
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Coke</li>
+                    <li>Pizza</li>
+                    <li>Chicken</li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var seleted;
+            bindListener();
+
+            function addMenu() {
+                let newMenu = prompt("추가할 메뉴를 입력해주세요");
+
+                if (newMenu === '' || newMenu === null) return;
+
+                let node = document.createElement('li');
+                let textNode = document.createTextNode(newMenu);
+
+                node.appendChild(textNode);
+                document.getElementById('my-list').appendChild(node);
+
+                bindListener();
+            }
+
+            function removeMenu() {
+                let menu = document.getElementById('my-list')
+                menu.removeChild(seleted);
+            }
+
+            function bindListener() {   // click listener를 모든 li 태그에 바인딩
+                let menuList = document.getElementsByTagName("li");
+
+                for (let i = 0; i < menuList.length; i++) {
+                    menuList[i].addEventListener("click", selectMenu);
+                    menuList[i].className += " list-group-item";
+                }
+            }
+
+            function selectMenu(evt) {
+                if (seleted) {  // 이전에 선택된 node 가 있을 때
+                    seleted.style.backgroundColor = "#ffffff";
+                }
+
+                seleted = evt.target || evt.srcElement;
+                seleted.style.backgroundColor = "#ffc5d0";
+                // 선택한 node 에 style 적용
+            }
+        </script>
+    </body>
+</html>
